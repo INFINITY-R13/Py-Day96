@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Space Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🚀 NASA Space Explorer</h1>
+        <p>Discover the wonders of space through NASA's APIs</p>
+    </header>
+
+    <main>
+        <section class="apod-section">
+            <h2>Astronomy Picture of the Day</h2>
+            <div id="apod-container" class="loading">
+                <div class="spinner"></div>
+            </div>
+        </section>
+
+        <section class="mars-section">
+            <h2>Mars Rover Photos</h2>
+            <div class="controls">
+                <select id="rover-select">
+                    <option value="curiosity">Curiosity</option>
+                    <option value="opportunity">Opportunity</option>
+                    <option value="spirit">Spirit</option>
+                </select>
+                <button id="fetch-mars-btn">Get Random Photos</button>
+            </div>
+            <div id="mars-container" class="photo-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data provided by NASA Open APIs | Built with ❤️ for space exploration</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
