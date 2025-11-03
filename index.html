@@ -3,39 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA Space Explorer</title>
+    <title>NASA Space Explorer - Discover the Universe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Animated background stars -->
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
     <header>
-        <h1>🚀 NASA Space Explorer</h1>
-        <p>Discover the wonders of space through NASA's APIs</p>
+        <div class="header-content">
+            <div class="logo">
+                <span class="rocket">🚀</span>
+                <h1>NASA SPACE EXPLORER</h1>
+            </div>
+            <p class="tagline">Journey Through the Cosmos with Real NASA Data</p>
+        </div>
     </header>
 
     <main>
-        <section class="apod-section">
-            <h2>Astronomy Picture of the Day</h2>
+        <!-- APOD Section -->
+        <section class="apod-section card">
+            <div class="section-header">
+                <h2>🌌 Astronomy Picture of the Day</h2>
+                <span class="badge">Live from NASA</span>
+            </div>
             <div id="apod-container" class="loading">
                 <div class="spinner"></div>
+                <p class="loading-text">Loading cosmic wonders...</p>
             </div>
         </section>
 
-        <section class="mars-section">
-            <h2>Mars Rover Photos</h2>
+        <!-- Mars Rover Section -->
+        <section class="mars-section card">
+            <div class="section-header">
+                <h2>🔴 Mars Rover Gallery</h2>
+                <span class="badge">Real Mars Photos</span>
+            </div>
             <div class="controls">
-                <select id="rover-select">
-                    <option value="curiosity">Curiosity</option>
-                    <option value="opportunity">Opportunity</option>
-                    <option value="spirit">Spirit</option>
-                </select>
-                <button id="fetch-mars-btn">Get Random Photos</button>
+                <div class="control-group">
+                    <label for="rover-select">Select Rover:</label>
+                    <select id="rover-select">
+                        <option value="curiosity">🤖 Curiosity (2012-Present)</option>
+                        <option value="perseverance">🔬 Perseverance (2021-Present)</option>
+                        <option value="opportunity">⚙️ Opportunity (2004-2018)</option>
+                        <option value="spirit">🛠️ Spirit (2004-2010)</option>
+                    </select>
+                </div>
+                <button id="fetch-mars-btn" class="btn-primary">
+                    <span>🎲</span> Get Random Photos
+                </button>
             </div>
             <div id="mars-container" class="photo-grid"></div>
+        </section>
+
+        <!-- NASA NEO Section -->
+        <section class="neo-section card">
+            <div class="section-header">
+                <h2>☄️ Near Earth Objects Today</h2>
+                <span class="badge">Asteroid Watch</span>
+            </div>
+            <div id="neo-container" class="loading">
+                <div class="spinner"></div>
+                <p class="loading-text">Scanning for asteroids...</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Data provided by NASA Open APIs | Built with ❤️ for space exploration</p>
+        <div class="footer-content">
+            <p>🛰️ Data provided by NASA Open APIs</p>
+            <p class="footer-links">
+                <a href="https://api.nasa.gov/" target="_blank">Get API Key</a> | 
+                <a href="https://github.com/nasa" target="_blank">NASA on GitHub</a>
+            </p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
